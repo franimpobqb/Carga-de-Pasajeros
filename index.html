@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carga de Pasajeros</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet'>
+    <link href="https://www.buquebus.com/Portal/resources/Bqb/css/portal-core.css?v=1.10.13" rel="stylesheet" />
+    <link href="https://www.buquebus.com/Portal/resources/css/lib/calendar/daterangepicker.min.css?v=1.10.13"
+        rel="stylesheet" />
+    <script src="https://www.buquebus.com/Portal/resources/js/lib/jQuery/jquery-3.5.0.min.js?version=1.10.13"></script>
+    <link href="https://www.buquebus.com/resources_portal/Bqb/resources/css/styles_bqb.css?v=1.10.13"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://www.buquebus.com/Portal/resources/Bqb/scss/purchase/_passenger.scss">
+    <link rel="stylesheet" href="https://www.buquebus.com/Portal/resources/Bqb/scss/commons/_Bqb-style.scss">
+    <link href="https://www.buquebus.com/Portal/resources/css/select2.min.css?v=1672842971868" rel="stylesheet" />
+    <link rel="stylesheet" href="cargapasajeros.css">
+
+    <style>
+        .asignar {
+            pointer-events: none;
+            display: inline-block;
+        }
+    
+    </style>
+</head>
+<br>
+
+<body>
+    <header><img src="header-sinlogin.png" alt="" style="width: 100%;"></header>
+    <section>
+
+        <div class="bqb-checkout passenger-page">
+            <div class="bqb-container">
+                <div class="bqb-row">
+                    <div class="bqb-col-12 bqb-col-lg-8 ">
+
+                        <h1 class="with-passengers">Carga de pasajeros</h1>
+
+                        <div class="passenger-list bqb-row checkout-card with-passengers">
+                            <div class="bqb-col-12 passenger-list__list">
+                                <h4>¿Qué pasajeros viajan?</h4>
+                                <p style="color: #999;">Selecciona los pasajeros para confirmar quiénes quieres que
+                                    viajen.</p>
+
+                            </div>
+
+                            <div id="passengers">
+                                <div id="AdultGroupTitle" class="bqb-row" style="display: flex;">
+                                    <h5 id="confirmedpassAdult">Adulto</h5>
+                                    <span style="color: #999;">Pasajes para Adultos disponibles: <span
+                                            id="passengerNumberAdult">0/2</span></span>
+                                </div>
+                                <div class="passenger-list__age-group" id="passengersListAdult">
+                                    <div class="passenger-list__an-item bqb-row" id="row-pass--1">
+                                        
+                                    </div>
+                                    <div class="passenger-list__an-item bqb-row" id="row-pass--2">
+                                        <div class="passenger-list__an-item--name ">adulto 2</div>
+                                        <div class="passenger-list__an-item--buttons">
+                                            <div class="button__edit" onclick="cPassengerRegister.editPassenger( -2 )">
+                                                <i class="bqb-icon-pen"></i><span>Cargar datos</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="headingOne">
+                                        <p>      Accordion Item #1</p>
+                                        <button class="btn">
+                                            Asignar pasaje
+                                        </button>
+                                        <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    
+                                          <div class="passenger-list__an-item--buttons"><div class="button__edit" onclick="cPassengerRegister.editPassenger( -1 )"><i class="bqb-icon-pen"></i><span>Cargar datos</span></div></div>
+                                          
+                                        </div>
+                                        
+                                      </h2>
+                                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                          Accordion Item #2
+                                        </button>
+                                      </h2>
+                                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                          Accordion Item #3
+                                        </button>
+                                      </h2>
+                                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="bqb-col-12 bqb-col-lg-4 checkout-details details-col-right">
+
+                        <div class="final-price-mobile" onclick="cCommon.showDetailPriceMob();"> Precio final <i
+                                class="bqb-icon-chevron-down"></i>
+                        </div>
+
+                        <div class="checkout-card">
+                            <div class="details-trip">
+                                <h3>Detalle de la compra</h3>
+                                <div class="trip-body">
+                                    <h4>Ida</h4>
+                                    <h5>
+
+                                        <span class="search-date-format">sábado 21 <span>de</span> enero <span>de</span>
+                                            2023</span>
+                                    </h5>
+                                    <div class="body-times">
+                                        <span>07:15hs.</span>
+                                        <span class="times-icon icon-ship"><i class="bqb-icon-boarding-info"
+                                                aria-hidden="true"></i></span>
+                                        <span class="times-line line-ship"></span>
+                                        <span class="times-dot"></span>
+                                        <span>10:00hs.</span>
+                                    </div>
+                                    <ul class="body-legs">
+                                        <li>Buenos Aires</li>
+                                        <li></li>
+                                        <li>Montevideo</li>
+                                    </ul>
+                                    <div class="body-details">
+                                    </div>
+                                </div>
+
+                                <!-- Vuelta -->
+                                <div class="trip-body">
+                                    <h4>Vuelta</h4>
+                                    <h5>
+
+                                        <span class="search-date-format">domingo 29 <span>de</span> enero
+                                            <span>de</span> 2023</span>
+                                    </h5>
+                                    <div class="body-times">
+                                        <span>19:30hs.</span>
+                                        <span class="times-icon icon-ship"><i class="bqb-icon-boarding-info"
+                                                aria-hidden="true"></i></span>
+                                        <span class="times-line line-ship"></span>
+                                        <span class="times-dot"></span>
+                                        <span>22:15hs.</span>
+                                    </div>
+                                    <ul class="body-legs">
+                                        <li>Montevideo</li>
+                                        <li></li>
+                                        <li>Buenos Aires</li>
+                                    </ul>
+                                    <div class="body-details">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-payment">
+                                <h3>Detalle del pago</h3>
+                                <div class="bqb-row" style="">
+                                    <div class="bqb-col-6">Tasas e Impuestos</div>
+                                    <div class="bqb-col-6 payment-digits text-right" id="import-tax">
+                                        <span class="price-trip">ARS</span>
+                                        <span id="total-reservation-tax">16.675
+                                            <!--16.675--></span>
+                                    </div>
+                                </div>
+                                <div class="bqb-row" style="">
+                                    <div class="bqb-col-6">Pasajes</div>
+                                    <div class="bqb-col-6 payment-digits text-right">
+                                        <span class="price-trip">ARS</span>
+                                        <span id="total-reservation-tickets">174.659
+                                            <!--174.659--></span>
+                                    </div>
+                                </div>
+
+
+                                <!-- ADICIONALES -->
+                                <div class="bqb-row" id="cont-addit-resume">
+
+                                </div><!-- FIN ADICIONALES -->
+
+                                <!-- AGREGAR IF RANGE MILLAS -->
+                                <!-- FIN RANGE MILLAS -->
+                                <div class="bqb-row payment-bold" style="margin-top:7px">
+                                    <div class="bqb-col-6">Total Pasajes<span style="display:none">191.334</span></div>
+                                    <div class="bqb-col-6 payment-digits text-right">
+
+                                        <span class="price-trip">ARS</span>
+                                        <span id="total-reservation">191.334</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <!-- Modulo : Resumen de Compra : End -->
+                        <div class="section-cta d-flex justify-content-end" style="margin-top: 20px;"
+                            id="final-paymet-cont">
+                            <a id="id-btn-overview-payment" class="button-primary">Continuar</a>
+                        </div>
+                        <!-- boton pagar o continuar -->
+                        <!-- fin boton pagar o continuar -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="footer.png" style="width: 100%;" alt="">
+    </footer>
+    <script src="https://www.buquebus.com/Portal/resources/Bqb/js/bootstrap.bundle.min.js?version=1.10.13"></script>
+    <script src="https://www.buquebus.com/Portal/resources/Bqb/js/daterangepicker.min.js?version=1.10.13"></script>
+    <script src="https://www.buquebus.com/Portal/resources/js/purchase/componentRememberPassword.js?version=1.10.13">
+    </script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/commons/componentLogin.js?v=1672842969869"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/home/componentNewsletter.js?v=1672842969869"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/pages/componentPage.js?v=1672842969869"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/elemental-page/componentHeader.js?v=1672842969869">
+    </script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/elemental-page/listElement.js?v=1672842969869"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/lib/owl.carousel.min.js?v=1672842969869"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/commons/select2.min.js?v=1672842971868"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/purchase/Bqb/componentPassengerUI.js?v=1672842971868">
+    </script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/purchase/componentPassenger.js?v=1672842971868"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/home/componentNewsletter.js?v=1672842971868"></script>
+
+    <script src="https://www.buquebus.com/Portal/resources/js/summary/componentSummary.js?v=1672842971868"></script>
+    <script src="" async defer></script>
+</body>
+
+</html>

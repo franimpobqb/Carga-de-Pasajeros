@@ -1,505 +1,170 @@
-.passenger-page {
-	/* Icono - Editar pasajero*/
-	/* Fix provisorio - posicion de los modales ***********************************/
-	/*.modal-dialog{
-		 position: absolute;
-		 top: 0;
-		 left:10vw;
-		 min-width: 80vw;
-	}
-	*/
-	/*.modal-dialog{
-		 max-width: 800px;
-	}
-	*/
-	/* Nueva version de Carga d pasajeros ****************************************/
-}
- .passenger-page .bqb-card.bqb-passenger-list {
-	 width: 300px;
-	 height: auto;
-	 background: #fff;
-	 position: absolute;
-	 top: 0;
-	 left: 90%;
-	 box-shadow: 0 1px 6px rgba(164, 163, 163, 0.6);
-	 cursor: default;
-}
- .passenger-page .cont-btn-add-driver {
-	 flex: auto;
-	 padding: 15px;
-	 margin-top: 20px;
-}
- .passenger-page #form-new-passenger-register, .passenger-page #form-passenger-register {
-	 padding: 0 15px;
-}
- .passenger-page #form-new-passenger-register .input-group.input-doc-passenger, .passenger-page #form-passenger-register .input-group.input-doc-passenger {
-	 padding-right: 30px;
-}
- .passenger-page #form-new-passenger-register .registration-radio.align-items-center.bqb-control.bqb-checkbox, .passenger-page #form-passenger-register .registration-radio.align-items-center.bqb-control.bqb-checkbox {
-	 margin-right: 30px;
-}
- .passenger-page .passenger-list.bqb-row.checkout-card.with-passengers {
-	 margin-bottom: 35px;
-}
- .passenger-page .bqb-row-info-reg .informative-message {
-	 color: #777;
-	 text-align: right;
-	 margin: 10px 0;
-}
- .passenger-page .bqb-card.bqb-passenger-list .content-wrapper {
-	 margin: 0;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-title {
-	 padding: 0 2rem;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-option {
-	 padding: 0 2rem;
-	 padding-left: 4rem;
-	 margin-bottom: 0 !important;
-	 line-height: 3 !important;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-option:hover {
-	 background: #eee;
-	 cursor: pointer;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-option.disabled:hover {
-	 background: #fff;
-	 cursor: default;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-option .bqb-icon-pen {
-	 color: #999;
-	 line-height: 3;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-option .bqb-icon-pen:hover {
-	 color: #0077c4;
-}
- .passenger-page .bqb-card.bqb-passenger-list .psg-option.disabled:hover .bqb-icon-pen {
-	 color: #999;
-}
- .passenger-page .button-primary {
-	/*display: inline-flex;
-	 font-weight: normal;
-	 text-align: center;
-	 white-space: nowrap;
-	 vertical-align: middle;
-	 user-select: none;
-	 cursor: pointer;
-	 transition: all .15s ease-in-out;
-	 padding: 0 2rem;
-	 font-size: 1.4rem;
-	 height: 3.5rem;
-	 line-height: 3.4rem;
-	 border-radius: .5rem;
-	 border: 0 none;
-	 color: #fff;
-	 background-color: #0077c4;
-	 text-transform: capitalize;
-	*/
-}
- .passenger-page .button-primary:focus, .passenger-page .button-primary:hover {
-	 color: #fff;
-	 text-decoration: none;
-	 background-color: #005891;
-}
- .passenger-page .button-primary:focus, .passenger-page .button-primary.focus {
-	 outline: 0;
-}
- .passenger-page .button-primary.disabled, .passenger-page .button-primary:disabled {
-	 opacity: 0.65;
-}
- .passenger-page .button-primary:not(:disabled):not(.disabled) {
-	 cursor: pointer;
-}
- .passenger-page .button-primary:not(:disabled):not(.disabled):active, .passenger-page .button-primary:not(:disabled):not(.disabled).active {
-	 background-image: none;
-}
- .passenger-page .button-primary .icon {
-	 margin-right: 0.5rem;
-}
- .passenger-page .button-primary .fa {
-	 display: none;
-}
- @media (max-width: 991.98px) {
-	 .passenger-page {
-		/*height: 4.5rem;
-		 line-height: 4.4rem;
-		 font-size: 1.6rem;
-		*/
-	}
-}
- .passenger-page #passengers, .passenger-page ul#loadedpass, .passenger-page ul#loadedcars {
-	 width: 100%;
-	 min-height: 200px;
-	 margin-top: 10px;
-	 margin-bottom: 0;
-	 overflow: auto;
-	 color: #345;
-	 text-transform: capitalize;
-	 padding: 0 !important;
-}
- .passenger-page ul#loadedcars {
-	 padding: 5px 0 !important;
-}
- .passenger-page #passengers li, .passenger-page ul#loadedpass li, .passenger-page ul#loadedcars li {
-	 padding: 5px 10px;
-	 cursor: pointer;
-}
- .passenger-page #passengers li[selected="selected"] {
-	 background: #def;
-}
- .passenger-page ul li {
-	 list-style-type: none;
-}
- .passenger-page .fa-pencil-alt, .passenger-page .fa-times {
-	 background: #def;
-	 display: inline-block;
-	 padding: 3px;
-	 margin: 0 5px;
-}
- .passenger-page .fa-pencil-alt:hover, .passenger-page .fa-times:hover {
-	 background: #abc;
-}
- .passenger-page .fa-pencil-alt:before, .passenger-page .fa-times:before {
-	 content: " ";
-}
- .passenger-page .modal {
-	 position: fixed;
-	 top: 0;
-	 left: 0;
-	 z-index: 1050;
-	 display: none;
-	 width: 100%;
-	 height: 100%;
-	 overflow: hidden;
-	 outline: 0;
-}
- .passenger-page .select2-container--default .select2-selection--single {
-	 border: none;
-}
- .passenger-page .select2-container--default .select2-selection--single:focus {
-	 outline: none;
-}
- .passenger-page #select2-docTypeCountry-regpassenger-container, .passenger-page #select2-country-regpassenger-container, .passenger-page #select2-phoneCountries1-container, .passenger-page #select2-nationalities-regpassenger-container, .passenger-page #select2-nationality-edit-container, .passenger-page #select2-docTypeCountry-edit-container, .passenger-page #select2-country-edit-container, .passenger-page #select2-phoneCountries1-edit-container {
-	/*estilos de form-control*/
-	 display: block;
-	 width: 100%;
-	 padding: 0.5rem 1.5rem;
-	 font-size: 1.3rem;
-	 line-height: normal;
-	 color: #333;
-	 background-color: #fff;
-	 background-clip: padding-box;
-	 border: 1px solid #ced4da;
-	 height: 3.5rem;
-	 border-radius: 0.5rem;
-	 -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	 -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-	 transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-	 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
- .passenger-page label {
-	 margin-top: 15px;
-}
- .passenger-page #vehicles1 {
-	 display: none;
-	 opacity: 0.5;
-	 pointer-events: none;
-}
- .passenger-page button.close {
-	 position: absolute;
-	 right: 20px;
-}
- .passenger-page .modal-header h2 {
-	 margin: 0;
-}
- .passenger-page .show-vehicles1 {
-	 opacity: 1 !important;
-	 pointer-events: auto !important;
-}
- .passenger-page #vehicules {
-	 text-transform: capitalize;
-}
- .passenger-page #AdultGroupTitle, .passenger-page #MinorGroupTitle, .passenger-page #InfantGroupTitle {
-	 display: none;
-	 margin: 24px 0px 4px;
-	 align-items: center;
-	 justify-content: space-between;
-}
- .passenger-page .passenger-list {
-	 margin: 0;
-}
- .passenger-page .passenger-list h5 {
-	 font-weight: bold;
-	 margin: 0px;
-	 font-size: 12px;
-}
- .passenger-page .passenger-list__list {
-	 padding: 0;
-}
- .passenger-page .passenger-list__an-item {
-	 border: 1px solid #ccc;
-	 border-bottom: none;
-	 min-height: 38px;
-	 margin: 0px;
-	 text-transform: capitalize;
-}
- .passenger-page .passenger-list__an-item:hover {
-	 background: #eee;
-}
- .passenger-page .passenger-list__an-item.selected {
-	 background: #0077c4;
-	 color: white;
-}
- .passenger-page .passenger-list__age-group > .passenger-list__an-item:last-of-type {
-	 border-bottom: 1px solid #ccc;
-}
- .passenger-page .passenger-list__an-item--name {
-	 width: 50%;
-	 padding: 8px;
-}
- .passenger-page .passenger-list__an-item--buttons {
-	 width: 50%;
-	 display: flex;
-	 align-items: center;
-	 justify-content: flex-end;
-}
- .passenger-page .passenger-list__an-item--buttons div {
-	 display: flex;
-	/*align-items: center;
-	*/
-	 justify-content: center;
-	 height: 24px;
-	 width: 120px;
-	 border-radius: 5px;
-	 margin-right: 8px;
-	 cursor: pointer;
-	 font-size: 14px;
-}
- .passenger-page .passenger-list__an-item--buttons .button__edit {
-	 color: #999;
-}
- @media (max-width: 600px) {
-	 .passenger-page .passenger-list__an-item--name {
-		 width: 40%;
-	}
-	 .passenger-page .passenger-list__an-item--buttons {
-		 width: 60%;
-	}
-	 .passenger-page .passenger-list__an-item--buttons div {
-		 width: auto;
-		 padding: 0 10px;
-	}
-	 .passenger-page .passenger-list__an-item--buttons .button__edit i {
-		/*se ve en MOBILE, se oculta en DESKTOP */
-		 display: flex;
-		 align-items: center;
-	}
-	 .passenger-page .passenger-list__an-item--buttons .button__edit span {
-		/*se ve en DESKTOP, se oculta en MOBILE */
-		 display: none;
-	}
-}
- @media (min-width: 600px) {
-	 .passenger-page {
-		/*se ve en MOBILE, se oculta en DESKTOP */
-	}
-	 .passenger-page .passenger-list__an-item--buttons .button__edit i {
-		 display: none;
-	}
-	 .passenger-page .passenger-list__an-item--buttons .button__edit span {
-		/*se ve en DESKTOP, se oculta en MOBILE */
-		 display: flex;
-	}
-}
- .passenger-page .passenger-list__an-item--buttons .button__edit:hover {
-	 color: #666;
-}
- .passenger-page .passenger-list__an-item.selected .button__edit {
-	 border-color: white;
-	 color: white;
-}
- .passenger-page .passenger-list__an-item.selected .button__edit:hover {
-	 border-color: white;
-	 color: white;
-}
- .passenger-page .passenger-list__an-item--buttons .button__add {
-	 background: #0077c4;
-	/* AZUL (primary) */
-	 border: 1px solid #0077c4;
-	 color: white;
-}
- .passenger-page .button__add.disabled {
-	 pointer-events: none;
-	 opacity: 0.4;
-}
- .passenger-page .passenger-list__an-item--buttons .button__add:hover {
-	 background: #005891;
-	/* AZUL OSCURO (primary:hover) */
-	 border-color: #005891;
-}
- .passenger-page .passenger-list__an-item--buttons .button__add .selected {
-	 background: white;
-	 border-color: white;
-	 color: #0077c4;
-}
- .passenger-page .passenger-list__an-item.selected .button__add {
-	 color: #0077c4;
-	 background: white;
-	 border-color: #ccc;
-}
- .passenger-page .btn-register-new-passenger {
-	 display: inline-block;
-	 width: 100%;
-	 height: 3.5rem;
-	 vertical-align: middle;
-	 padding: 0 2rem;
-	 cursor: pointer;
-	 background: white;
-	 border-radius: 0.5rem;
-	 border: 1px solid #ccc;
-	 font-weight: normal;
-	 font-size: 1.4rem;
-	 text-align: center;
-	 text-transform: capitalize;
-	 line-height: 3.4rem;
-	 white-space: nowrap;
-	 user-select: none;
-	 transition: all 0.15s ease-in-out;
-}
- .passenger-page .bqb-icon-times:before {
-	 content: "\2BBF";
-	 font-size: 14px;
-}
- .passenger-page #confirmedlistcars ul li i {
-	 float: right;
-	 color: #0077c4;
-	 font-size: 15px;
-	 margin-left: 6px;
-}
- .passenger-page #confirmedlistcars ul li i:hover {
-	 color: #005891;
-}
- .passenger-page #loadedcars {
-	 margin: 0 !important;
-}
- .show-vehicles1 {
-	 opacity: 1 !important;
-	 pointer-events: auto !important;
-}
- #passengerConfirmedListName li {
-	 text-transform: capitalize;
-}
- .modal {
-	 position: fixed;
-	 top: 0;
-	 left: 0;
-	 z-index: 1050;
-	 display: none;
-	 width: 100%;
-	 height: 100%;
-	 overflow: hidden;
-	 outline: 0;
-}
-/*.modal-dialog{
-	 max-width: 800px;
-}
-*/
- #form-new-passenger-register-and-sibling {
-	/*padding: 0;
-	 */
-}
- #form-new-passenger-register-and-sibling .select2-container--default .select2-selection--single {
-	 border: none;
-}
- #form-new-passenger-register-and-sibling .select2-container--default .select2-selection--single:focus {
-	 outline: none;
-}
- #form-new-passenger-register-and-sibling #select2-docTypeCountry-regpassenger-container, #form-new-passenger-register-and-sibling #select2-country-regpassenger-container, #form-new-passenger-register-and-sibling #select2-phoneCountries1-container, #form-new-passenger-register-and-sibling #select2-nationalities-regpassenger-container, #form-new-passenger-register-and-sibling #select2-nationality-edit-container, #form-new-passenger-register-and-sibling #select2-docTypeCountry-edit-container, #form-new-passenger-register-and-sibling #select2-country-edit-container, #form-new-passenger-register-and-sibling #select2-phoneCountries1-edit-container {
-	 display: block;
-	 width: 100%;
-	 padding: 0.5rem 1.5rem;
-	 font-size: 1.3rem;
-	 line-height: normal;
-	 color: #333;
-	 background-color: #fff;
-	 background-clip: padding-box;
-	 border: 1px solid #ced4da;
-	 height: 3.5rem;
-	 border-radius: 0.5rem;
-	 -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	 -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-	 transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-	 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
- #form-new-passenger-register-and-sibling label {
-	 margin-top: 15px;
-}
- #form-new-passenger-register-and-sibling #vehicles1 {
-	 display: none;
-	 opacity: 0.5;
-	 pointer-events: none;
-}
- #form-new-passenger-register-and-sibling button.close {
-	 position: absolute;
-	 right: 20px;
-}
- #form-new-passenger-register-and-sibling .modal-header h2 {
-	 margin: 0;
-}
- .final-price-mobile {
-	 display: none;
-}
- .button-primary.disabled-pay {
-	 background: #c3c3c3;
-	 pointer-events: none;
-}
- @media (max-width: 991.98px) {
-	 .final-price-mobile {
-		 font-weight: 700;
-		 padding-top: 2.5rem;
-		 cursor: pointer;
-		 display: block;
-	}
-	 .final-price-mobile i {
-		 margin-left: 4rem;
-	}
-	 .bqb-col-12.bqb-col-lg-4.checkout-details.details-col-right {
-		 position: sticky;
-		 bottom: 0;
-		 z-index: 999;
-		 background: #fff;
-		 padding: 0 25px 30px;
-		 border-top: 1px solid #dedede;
-		 margin-bottom: -18px;
-		 box-shadow: 0px 0px 6px -4px rgba(0, 0, 0, 0.75);
-	}
-	 .bqb-col-12.bqb-col-lg-4.checkout-details.details-col-right .checkout-card {
-		 opacity: 0;
-		 max-height: 0;
-		 visibility: hidden;
-		 overflow: hidden;
-		 -webkit-box-shadow: none !important;
-		 box-shadow: none !important;
-		 border: 0;
-		 padding-left: 0;
-		 padding-right: 0;
-		 padding-top: 0;
-		 transition: all 0.2s ease-in-out;
-		 margin-bottom: 0;
-	}
-	 .bqb-col-12.bqb-col-lg-4.checkout-details.details-col-right .checkout-card.show-det-mob {
-		 opacity: 1;
-		 visibility: visible;
-		 overflow: visible;
-		 max-height: inherit;
-		 padding-top: 2rem;
-	}
-	 #final-paymet-cont {
-		 margin-top: 1rem !important;
-	}
-}
- 
+/* OVERRIDE ESTILOS */
+
+.passenger-page #passengers,
+.passenger-page ul#loadedpass,
+.passenger-page ul#loadedcars {
+	overflow: inherit;
+	text-transform: inherit;
+}
+
+.passenger-page .passenger-list h5 {
+	font-weight: 700;
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+label {
+	font-size: 1.4rem;
+}
+
+.accordion-button:not(.collapsed)::after {
+	background-image: url(chevron-blue.svg);
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+.accordion-button::after {
+	flex-shrink: 0;
+	width: 1.25rem;
+	height: 1.25rem;
+	margin-left: auto;
+	content: "";
+	background-image: url(chevron-blue.svg);
+	background-repeat: no-repeat;
+	background-size: 1.25rem;
+	transition: transform .2s ease-in-out;
+	cursor: pointer;
+}
+
+.accordion {
+	border: solid 1px #E2E2E2;
+	border-radius: .5rem;
+	-webkit-border-radius: .5rem;
+	-moz-border-radius: .5rem;
+	-ms-border-radius: .5rem;
+	-o-border-radius: .5rem;
+}
+
+.accordion-item {
+	border-bottom: solid 1px #E2E2E2;
+}
+
+
+.accordion-header {
+	position: relative;
+	padding: 1rem;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.accordion-body {
+	padding: 3rem 1rem;
+}
+
+button.accordion-button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: none;
+	border: none;
+	outline: none;
+	padding-right: 2rem;
+}
+
+button.accordion-button:not(.collapsed) {
+	background-color: #E7F1FF;
+}
+
+.registration-row.title_section_pass {
+	margin-top: 3rem;
+}
+
+.registration-row.title_section_pass b {
+	text-transform: uppercase;
+	color: #0077C4;
+}
+
+
+.button__add {
+	position: absolute;
+	right: 180px;
+	top: 0;
+	cursor: pointer;
+	transform: translateY(50%);
+	background-color: #0077C4;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: .5rem 1.5rem;
+	color: #fff;
+	font-size: 1.4rem;
+	border-radius: .5rem;
+	-webkit-border-radius: .5rem;
+	-moz-border-radius: .5rem;
+	-ms-border-radius: .5rem;
+	-o-border-radius: .5rem;
+	-webkit-transform: translateY(50%);
+	-moz-transform: translateY(50%);
+	-ms-transform: translateY(50%);
+	-o-transform: translateY(50%);
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+}
+
+.button__add:hover {
+	background-color: #005891;
+}
+
+.passenger-page .passenger-list__an-item--name {
+	font-size: 1.8rem;
+	z-index: 5;
+	pointer-events: none;
+}
+
+.passenger-page .passenger-list__an-item--buttons {
+	width: 100%;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.passenger-page .passenger-list__an-item--buttons .button__edit {
+	text-transform: uppercase;
+	color: #000;
+	font-weight: 600;
+}
+
+.passenger-page .passenger-list__an-item--buttons .button__edit span {
+	align-items: center;
+}
+
+
+#loadedcars li {
+	display: flex;
+	gap: .5rem;
+	align-items: center;
+	width: 100%;
+}
+
+
+#loadedcars li p {
+	background: #F2F2F2;
+	width: 30%;
+	padding: .5rem;
+	border-radius: .5rem;
+	-webkit-border-radius: .5rem;
+	-moz-border-radius: .5rem;
+	-ms-border-radius: .5rem;
+	-o-border-radius: .5rem;
+}

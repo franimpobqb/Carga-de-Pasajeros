@@ -9,16 +9,73 @@
 
 .passenger-page .passenger-list h5 {
 	font-weight: 700;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	margin-bottom: 1rem;
 }
+
+.passenger-page .passenger-list__an-item {
+	border: none;
+	border-bottom: solid 1px #E2E2E2;
+}
+
+.passenger-page .passenger-list__an-item:hover {
+	background: inherit;
+}
+
+.passenger-page .passenger-list__an-item.selected {
+	color: inherit;
+	background: inherit;
+}
+
+
+.passenger-page .btn-register-new-passenger {
+	color: #0077C4;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: solid 2px #0077C4;
+	width: auto;
+}
+
+.passenger-page .btn-register-new-passenger:hover {
+	background-color: #0077C4;
+	color: #fff;
+}
+
+.passenger-page .cont-btn-add-driver {
+	margin-top: 0;
+}
+
+/* FIN OVERRIDE ESTILOS */
 
 label {
 	font-size: 1.4rem;
 }
 
+.form__error-message {
+	display: none;
+	color: #DE0101;
+	padding-left: 20px;
+	margin-top: 1rem;
+	padding-bottom: 2rem;
+	position: relative;
+}
+
+.form__error-message:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 3px;
+	width: 15px;
+	height: 15px;
+	background-image: url(icon-error.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 .accordion-button:not(.collapsed)::after {
-	background-image: url(chevron-blue.svg);
 	transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
@@ -39,7 +96,8 @@ label {
 	cursor: pointer;
 }
 
-.accordion {
+.accordion.passenger-list__age-group {
+	margin-bottom: 6rem;
 	border: solid 1px #E2E2E2;
 	border-radius: .5rem;
 	-webkit-border-radius: .5rem;
@@ -48,10 +106,13 @@ label {
 	-o-border-radius: .5rem;
 }
 
+.accordion.passenger-list__age-group:last-child {
+	margin-bottom: 3rem;
+}
+
 .accordion-item {
 	border-bottom: solid 1px #E2E2E2;
 }
-
 
 .accordion-header {
 	position: relative;
@@ -60,7 +121,24 @@ label {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+}
 
+.passenger-list__an-item.selected .accordion-header,
+.passenger-list__an-item.selected button.accordion-button:not(.collapsed) {
+	background-color: #0077C4;
+}
+
+.passenger-page .passenger-list__an-item.selected .passenger-list__an-item--name {
+	color: #fff;
+}
+
+.passenger-list__an-item.selected .accordion-button::after {
+	background-image: url(chevron-white.svg);
 }
 
 .accordion-body {
@@ -94,28 +172,23 @@ button.accordion-button:not(.collapsed) {
 	color: #0077C4;
 }
 
-
 .button__add {
 	position: absolute;
 	right: 180px;
-	top: 0;
+
 	cursor: pointer;
-	transform: translateY(50%);
 	background-color: #0077C4;
 	text-transform: uppercase;
 	font-weight: bold;
 	padding: .5rem 1.5rem;
 	color: #fff;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	border-radius: .5rem;
 	-webkit-border-radius: .5rem;
 	-moz-border-radius: .5rem;
 	-ms-border-radius: .5rem;
 	-o-border-radius: .5rem;
-	-webkit-transform: translateY(50%);
-	-moz-transform: translateY(50%);
-	-ms-transform: translateY(50%);
-	-o-transform: translateY(50%);
+
 	transition: all .2s ease;
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -128,7 +201,7 @@ button.accordion-button:not(.collapsed) {
 }
 
 .passenger-page .passenger-list__an-item--name {
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	z-index: 5;
 	pointer-events: none;
 }
@@ -147,8 +220,54 @@ button.accordion-button:not(.collapsed) {
 
 .passenger-page .passenger-list__an-item--buttons .button__edit span {
 	align-items: center;
+	font-size: 13px;
 }
 
+.vehicle-load-wrapper,
+.vehicle-list-wrapper {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.btn-add-vehicle {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.passenger-page #confirmedlistcars ul li i {
+	float: right;
+	color: #0077c4;
+	font-size: 15px;
+	margin-left: 6px;
+	width: 20px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(icon-close.svg);
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+}
+
+
+.passenger-page #confirmedlistcars ul li i:hover {
+	opacity: .75;
+}
 
 #loadedcars li {
 	display: flex;
@@ -157,14 +276,57 @@ button.accordion-button:not(.collapsed) {
 	width: 100%;
 }
 
-
 #loadedcars li p {
 	background: #F2F2F2;
 	width: 30%;
+	margin-bottom: .5rem;
 	padding: .5rem;
 	border-radius: .5rem;
 	-webkit-border-radius: .5rem;
 	-moz-border-radius: .5rem;
 	-ms-border-radius: .5rem;
 	-o-border-radius: .5rem;
+}
+
+@media (max-width: 767.98px) {
+
+
+	.vehicle-load-wrapper,
+	.vehicle-list-wrapper {
+
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.vehicle-load-wrapper {
+		order: 1;
+	}
+
+	.btn-add-vehicle {
+		order: 2;
+		justify-content: center;
+	}
+
+	.vehicle-list-wrapper {
+		order: 3;
+	}
+
+	.passenger-page .cont-btn-add-driver {
+		order: 4;
+	}
+
+	.cont-form-add-driver {
+		order: 5;
+	}
+}
+
+
+@media (max-width: 600px) {
+	.button__add {
+		right: 80px;
+	}
+
 }
